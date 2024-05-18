@@ -18,10 +18,10 @@ export const Aside = ({ asideShow }) => {
 
   const handleLogout = () => {
     // Limpiar la información de sesión
-    localStorage.removeItem("userInfo");
+    localStorage.removeItem("user");
 
     // Redirigir al usuario a la página de inicio de sesión
-    navigate("/signin");
+    navigate("/logIn");
   };
 
   // Arreglo de los items del Menu
