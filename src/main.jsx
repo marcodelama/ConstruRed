@@ -1,16 +1,13 @@
+import React from "react";
 import ReactDOM from "react-dom/client";
-
-import App from "./App.jsx";
-
-import { ConfigProvider } from "./Provider/ConfigProvider.jsx";
+import { App } from "./Routers/App";
+import { ConfigProvider } from "./Provider/ConfigProvider";
 import "./index.css";
 
-import { ThemeProvider } from "@material-tailwind/react";
-
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <ConfigProvider>
-    <ThemeProvider>
+  <React.StrictMode>
+    <ConfigProvider>
       <App />
-    </ThemeProvider>
-  </ConfigProvider>
+    </ConfigProvider>
+  </React.StrictMode>
 );

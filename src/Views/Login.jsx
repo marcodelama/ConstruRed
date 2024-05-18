@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Alert } from "@material-tailwind/react";
+import { user } from "../Data/Acceso";
+import { toast, Toaster } from "sonner";
 
 export const Login = () => {
   // Estado para guardar los datos del SignIn
   const [formData, setFormData] = useState({ Rol: "", Password: "" });
-  // Estado para mostrar la alerta de error de login
-  const [showErrorAlert, setShowErrorAlert] = useState(false);
-  // Estado para mostrar la alerta de login exitoso
-  const [showSuccessAlert, setShowSuccessAlert] = useState(false);
 
   // Navegación por rutas
   const navigate = useNavigate();
@@ -18,12 +15,6 @@ export const Login = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Creamos un usuario ficticio
-  const user = {
-    Rol: "admin",
-    Password: "1234",
-  };
-
   // Funcion para enviar el formulario
   const handleSubmit = (e) => {
     // Evitamos que la pagina se recarge
@@ -31,49 +22,33 @@ export const Login = () => {
 
     // Validamos que los datos sean iguales
     if (user.Rol === formData.Rol && user.Password === formData.Password) {
-      setShowErrorAlert(false);
-      setShowSuccessAlert(true);
+      // LocalStorage
+      localStorage.setItem("user", JSON.stringify(user.Rol));
 
-      // Temporizador antes de redirigir a la pagina principal
-      setTimeout(() => {
-        // Lo almacenamos en un localStorage
-        localStorage.setItem("userInfo", JSON.stringify(user.Rol));
+      // Alerta de succes
+      toast.success("Inicio de Sesión Exitoso");
 
-        // Redireccionamos a la página principal
-        navigate("/", { replace: true });
-      }, 1000);
+      // Redirigimos
+      // navigate("/");
     }
 
-    // Sino mostramos una alerta de error de credenciales
-    else {
-      setShowErrorAlert(true);
-      setShowSuccessAlert(false);
-    }
+    // Alerta error
+    // toast.error("Error en las credenciales");
   };
 
-  useEffect(() => {
-    // Temporizador para ocultar las alertas después de 3 segundos
-    const timeoutId = setTimeout(() => {
-      setShowErrorAlert(false);
-      setShowSuccessAlert(false);
-    }, 3000);
+  // useEffect(() => {
+  //   // Verificamos si el usuario ya está autenticado
+  //   const isAuthenticated = localStorage.getItem("user");
 
-    // Limpiamos el temporizador al desmontar el componente
-    return () => clearTimeout(timeoutId);
-  }, [showErrorAlert, showSuccessAlert]);
-
-  useEffect(() => {
-    // Verificamos si el usuario ya está autenticado
-    const isAuthenticated = Boolean(localStorage.getItem("userInfo"));
-
-    // Si está autenticado, redirigimos a la página principal
-    if (isAuthenticated) {
-      navigate("/", { replace: true });
-    }
-  }, [navigate]);
+  //   // Si está autenticado, redirigimos a la página principal
+  //   if (isAuthenticated) {
+  //     navigate("/", { replace: true });
+  //   }
+  // }, []);
 
   return (
     <>
+      <Toaster />
       <div className="cont-login relative flex flex-col justify-center w-full h-[100vh] items-center">
         <div className="fondo duration-700 absolute bg-black h-full w-full opacity-50 top-0 left-0"></div>
         <div className="cont-container-login relative w-[735px] max-w-full min-h-[345px]">
@@ -115,25 +90,6 @@ export const Login = () => {
           </div>
         </div>
       </div>
-      {showErrorAlert && (
-        <Alert
-          show={showErrorAlert}
-          onClose={() => setShowErrorAlert(false)}
-          className="absolute top-4 right-4 w-2/5 rounded-none border-l-4 border-red-500 bg-red-500/10 font-medium text-red-500"
-        >
-          Usuario o contraseña incorrecta
-        </Alert>
-      )}
-
-      {showSuccessAlert && (
-        <Alert
-          show={showSuccessAlert}
-          onClose={() => setShowSuccessAlert(false)}
-          className="absolute top-4 right-4 w-2/5 rounded-none border-l-4 border-green-500 bg-green-500/10 font-medium text-green-500"
-        >
-          Iniciaste Sesión con éxito
-        </Alert>
-      )}
     </>
   );
 };
