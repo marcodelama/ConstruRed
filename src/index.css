@@ -1,0 +1,289 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  padding-left: 12px;
+  padding-right: 12px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.lista-footer {
+  opacity: 1;
+  background: transparent;
+  box-shadow: none;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  list-style: none;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+
+/* Contenido lista modo claro */
+.contenido-lista {
+  margin: 0px;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  letter-spacing: 0.02857em;
+  opacity: 1;
+  text-transform: none;
+  vertical-align: unset;
+  text-decoration: none;
+  color: rgb(123, 128, 154);
+  font-weight: 400;
+}
+
+.ScrollTableVertical::-webkit-scrollbar-track {
+  background: rgba(185, 185, 185, 0.421);
+  border-radius: 2px 25px 25px 2px;
+}
+
+.ScrollTableVertical::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
+  background: #ea0b0b;
+  background: #fff;
+  border-radius: 2px 25px 25px 2px;
+}
+
+.ScrollTableVertical::-webkit-scrollbar-thumb {
+  background-color: #f7f2f2fc;
+  border-radius: 2px 25px 25px 2px;
+  border: 1px solid #cdcdce;
+}
+
+/* Header Fijo */
+.scrolled-up {
+  box-shadow: none;
+  background: transparent;
+}
+
+/* Header Modo Claro */
+.scrolled-down {
+  box-shadow: rgba(255, 255, 255, 0.9) 0rem 0rem 0.0625rem 0.0625rem inset,
+    rgba(0, 0, 0, 0.05) 0rem 1.25rem 1.6875rem 0rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: saturate(200%) blur(1.875rem);
+}
+
+/* background de los label del aside */
+.background-rosado {
+  background: linear-gradient(195deg, rgb(236, 64, 122), rgb(216, 27, 96));
+}
+
+.background-negro {
+  background: linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25));
+}
+
+.background-azul {
+  background: linear-gradient(195deg, rgb(73, 163, 241), rgb(26, 115, 232));
+}
+
+.background-verde {
+  background: linear-gradient(195deg, rgb(102, 187, 106), rgb(67, 160, 71));
+}
+
+.background-naranja {
+  background: linear-gradient(195deg, rgb(255, 167, 38), rgb(251, 140, 0));
+}
+
+.background-rojo {
+  background: linear-gradient(195deg, rgb(239, 83, 80), rgb(229, 57, 53));
+}
+
+/* Primer Imagen del Aside */
+.fondo-aside1 {
+  background: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.3)),
+    url("./Static/ImgPred/fondoAside1.webp");
+  background-size: cover;
+  background-position: 50%;
+  transition: all 0.3s;
+  color: white;
+}
+
+/* Segunda Imagen del Aside */
+.fondo-aside2 {
+  background: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.3)),
+    url("./Static/ImgPred/fondoAside2.webp");
+  background-size: cover;
+  background-position: 50%;
+  transition: all 0.3s;
+  color: white;
+}
+
+/* Tercera Imagen del Aside */
+.fondo-aside3 {
+  background: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.3)),
+    url("./Static/ImgPred/fondoAside3.webp");
+  background-size: cover;
+  background-position: 50%;
+  transition: all 0.3s;
+  color: white;
+}
+
+/* Cuarta Imagen del Aside */
+.fondo-aside4 {
+  background: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.3)),
+    url("./Static/ImgPred/fondoAside4.webp");
+  background-size: cover;
+  background-position: 50%;
+  transition: all 0.3s;
+  color: white;
+}
+
+.caja-hover:hover {
+  background-color: rgb(148 164 184);
+  color: rgb(255, 255, 255);
+  backdrop-filter: blur(24px);
+  transition: all 0.3s;
+}
+
+/* Cuadro Bookings */
+.bookings {
+  background: linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25));
+  box-shadow: rgba(0, 0, 0, 0.14) 0rem 0.25rem 1.25rem 0rem,
+    rgba(64, 64, 64, 0.4) 0rem 0.4375rem 0.625rem -0.3125rem;
+}
+
+/* Cuadro Barras */
+.barras {
+  background: linear-gradient(195deg, rgb(73, 163, 241), rgb(26, 115, 232));
+  box-shadow: rgba(0, 0, 0, 0.14) 0rem 0.25rem 1.25rem 0rem,
+    rgba(0, 187, 212, 0.4) 0rem 0.4375rem 0.625rem -0.3125rem;
+}
+
+/* Cuadro Store */
+.store {
+  background: linear-gradient(195deg, rgb(102, 187, 106), rgb(67, 160, 71));
+  box-shadow: rgba(0, 0, 0, 0.14) 0rem 0.25rem 1.25rem 0rem,
+    rgba(76, 175, 79, 0.4) 0rem 0.4375rem 0.625rem -0.3125rem;
+}
+
+/* Cuadro Agregar Persona */
+.add-person {
+  background: linear-gradient(195deg, rgb(236, 64, 122), rgb(216, 27, 96));
+  box-shadow: rgba(0, 0, 0, 0.14) 0rem 0.25rem 1.25rem 0rem,
+    rgba(233, 30, 98, 0.4) 0rem 0.4375rem 0.625rem -0.3125rem;
+}
+
+/* Estilos del hr en los cuadros */
+.separador-cuadros {
+  flex-shrink: 0;
+  border-top: 0px solid rgba(0, 0, 0, 0.12);
+  border-right: 0px solid rgba(0, 0, 0, 0.12);
+  border-left: 0px solid rgba(0, 0, 0, 0.12);
+  background-color: transparent;
+  height: 0.0625rem;
+  margin: 1rem 0px;
+  opacity: 0.25;
+  background-image: linear-gradient(
+    to right,
+    rgba(52, 71, 103, 0),
+    rgba(52, 71, 103, 0.4),
+    rgba(52, 71, 103, 0)
+  ) !important;
+}
+
+.icon-seemore {
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.5rem !important;
+  color: rgb(123, 128, 154);
+}
+
+/* Estilo del card modo claro */
+.estilo-card {
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-width: 0px;
+  overflow-wrap: break-word;
+  background-clip: border-box;
+  border: 0px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.75rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0rem 0.25rem 0.375rem -0.0625rem,
+    rgba(0, 0, 0, 0.06) 0rem 0.125rem 0.25rem -0.0625rem;
+  overflow: visible;
+  height: 100%;
+}
+
+.icon-oder {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 8%;
+  left: 2px;
+  z-index: 2;
+  opacity: 1;
+  color: rgb(255, 255, 255);
+  border-radius: 50%;
+  box-shadow: none;
+  font-size: 0.875rem;
+}
+
+/* Raya modo claro */
+.rayita-card::after {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  left: 17px;
+  height: 100%;
+  opacity: 1;
+  border-right: 0.125rem solid rgb(222, 226, 230);
+}
+
+/* Raya modo oscuro */
+.body-dark .rayita-card::after {
+  border-right: 0.125rem solid rgba(255, 255, 255, 0.4);
+}
+
+/* Lista envios modo claro */
+.lista-envios {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 14px 24px;
+  margin-bottom: 8px;
+  margin-top: 16px;
+  opacity: 1;
+  background: rgb(248, 249, 250);
+  color: rgb(52, 71, 103);
+  border-radius: 0.5rem;
+  box-shadow: none;
+}
+
+/* Lista envios modo oscuro */
+.body-dark .lista-envios {
+  background: transparent;
+}
