@@ -1,19 +1,16 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { user } from "../Data/Acceso";
 import { toast, Toaster } from "sonner";
+import { InputForm } from "../Css/InputLogin";
+import { IconKey, Usuario } from "../Icons/Iconos";
 
 export const Login = () => {
   // Estado para guardar los datos del SignIn
-  const [formData, setFormData] = useState({ Rol: "", Password: "" });
+  const [formData, setFormData] = useState({ rol: "", password: "" });
 
   // Navegación por rutas
   const navigate = useNavigate();
-
-  // Funcion para capturar el evento de los input
-  const handleInputChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
   // Funcion para enviar el formulario
   const handleSubmit = (e) => {
@@ -21,9 +18,9 @@ export const Login = () => {
     e.preventDefault();
 
     // Validamos que los datos sean iguales
-    if (user.Rol === formData.Rol && user.Password === formData.Password) {
+    if (user.rol === formData.rol && user.password === formData.password) {
       // LocalStorage
-      localStorage.setItem("user", JSON.stringify(user.Rol));
+      localStorage.setItem("user", JSON.stringify(user.rol));
 
       // Alerta de succes
       toast.success("Inicio de Sesión Exitoso");
@@ -49,46 +46,68 @@ export const Login = () => {
   return (
     <>
       <Toaster />
-      <div className="cont-login relative flex flex-col justify-center w-full h-[100vh] items-center">
-        <div className="fondo duration-700 absolute bg-black h-full w-full opacity-50 top-0 left-0"></div>
-        <div className="cont-container-login relative w-[735px] max-w-full min-h-[345px]">
-          <div
-            className={`container z-20 rounded-2xl relative overflow-hidden w-full h-full `}
-          >
-            <div className="form-container sign-in-container absolute top-0 left-0 w-1/2 h-full ease-in-out transition-transform duration-[0.01s]">
+      <div>
+        <section className="min-h-screen flex items-stretch text-white ">
+          <div className="fondo-form lg:flex w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center">
+            <div className="absolute bg-black opacity-50 inset-0 z-0"></div>
+            <div className="w-full px-24 z-10">
+              <h1 className="text-4xl font-bold text-left tracking-wide">
+                Bienvenido a ConstruRed
+              </h1>
+              <p className="my-4 text-lg">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Corrupti voluptatibus quia sit neque mollitia nobis ex
+                necessitatibus quis, dolores suscipit et recusandae obcaecati
+                voluptas beatae dolorum? Ipsa laborum velit nemo?
+              </p>
+            </div>
+          </div>
+          <div className="lg:w-1/2 w-full flex items-center justify-center text-center md:px-16 px-0 z-0">
+            <div className="w-full py-6 z-20">
+              <h1 className="my-6 text-black text-4xl font-bold">
+                Inicia Sesión
+              </h1>
               <form
                 onSubmit={handleSubmit}
-                className="bg-white flex flex-col p-[0_50px] h-full justify-center items-center text-center"
+                className="sm:w-2/3 w-full px-4 lg:px-0 mx-auto"
               >
-                <h1 className="txt-titulo font-bold">Iniciar Sesión</h1>
-                <input
-                  className="bg-[#eee] border-none p-[12px_15px] m-[8px_0] w-full"
-                  type="text"
-                  name="Rol"
-                  placeholder="Rol"
-                  value={formData.Rol}
-                  onChange={handleInputChange}
-                  required
+                {/* Input del Rol */}
+                <InputForm
+                  type={""}
+                  name={"rol"}
+                  id={"rol"}
+                  icon={<Usuario />}
+                  text={"Rol"}
+                  value={formData.rol}
+                  onChange={(e) =>
+                    setFormData({ ...formData, rol: e.target.value })
+                  }
                 />
-                <input
-                  className="bg-[#eee] border-none p-[12px_15px] m-[8px_0] w-full"
-                  type="password"
-                  name="Password"
-                  placeholder="Password"
-                  value={formData.Password}
-                  onChange={handleInputChange}
-                  required
+
+                {/* Input del Password */}
+                <InputForm
+                  type={"password"}
+                  name={"password"}
+                  id={"password"}
+                  icon={<IconKey />}
+                  text={"Contraseña"}
+                  value={formData.password}
+                  onChange={(e) =>
+                    setFormData({ ...formData, password: e.target.value })
+                  }
                 />
-                <button
-                  type="submit"
-                  className=" rounded-3xl border border-solid border-blue-500 bg-blue-500 hover:bg-blue-600 text-white text-xs p-[12px_45px] uppercase active:scale-95 outline-none"
-                >
-                  Iniciar Sesión
-                </button>
+                <div className="my-2">
+                  <button
+                    type="submit"
+                    className="relative w-full bg-blue-700 py-2 rounded-[5px]"
+                  >
+                    Sign In
+                  </button>
+                </div>
               </form>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </>
   );

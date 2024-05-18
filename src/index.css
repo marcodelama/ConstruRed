@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.fondo-form {
+  background-image: url("./assets//fondoform.jpg");
+}
+
 /* Footer */
 .footer {
   width: 100%;

@@ -1,4 +1,4 @@
 export const user = {
-  Rol: "admin",
-  Password: "1234",
+  rol: "admin",
+  password: "1234",
 };
