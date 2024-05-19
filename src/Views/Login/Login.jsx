@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { user } from "../Data/Acceso";
+import { user } from "../../Data/Acceso";
 import { toast, Toaster } from "sonner";
-import { InputForm } from "../Css/InputLogin";
-import { IconKey, Usuario } from "../Icons/Iconos";
+import { InputForm } from "../../Css/InputLogin";
+import { IconKey, Usuario } from "../../Icons/Iconos";
 
 export const Login = () => {
   // Estado para guardar los datos del SignIn

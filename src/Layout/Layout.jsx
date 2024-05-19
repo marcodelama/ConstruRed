@@ -63,7 +63,7 @@ export const Layout = ({ children, areaPagina }) => {
   // Html a renderizar
   return (
     <>
-      <div className="relative md:pl-[18.625rem] md:pt-6 md:pr-6 md:pb-6 w-full bg-[rgb(240,242,245)] dark:bg-[rgb(26,32,53)] transition-all">
+      <div className="relative xl:pl-[20rem] md:pt-6 md:px-6 md:pb-6 w-full bg-[rgb(240,242,245)] dark:bg-[rgb(26,32,53)] transition-all">
         <div className="absolute left-0 top-0 w-full h-[100vh] bg-[rgb(240,242,245)] dark:bg-[rgb(26,32,53)]" />
         <Aside
           // Estado que almacena si es true o false
@@ -79,7 +79,7 @@ export const Layout = ({ children, areaPagina }) => {
           // Funcion para mostrar el aside
           showAside={showAside}
         />
-        {children}
+        <div className="relative pt-7">{children}</div>
         <div className="footer flex-col lg:flex-row">
           <div className="marca-footer flex flex-wrap justify-center items-center text-[rgb(123,128,154)] text-[0.875rem] px-3 bg-transparent dark:text-[rgba(255,255,255,0.8)]">
             © 2024

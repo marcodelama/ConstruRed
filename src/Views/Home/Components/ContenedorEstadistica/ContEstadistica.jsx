@@ -5,7 +5,7 @@ import { Puntos } from "./Components/Components/Puntos/Puntos";
 export const ContEstadistica = () => {
   return (
     <>
-      <div className="flex flex-wrap -mt-6 w-[calc(100%+24px)] -ml-6">
+      <div className="flex flex-wrap -mt-6 w-full -ml-6">
         <Estadistica
           tituloEstadistica={"Top 10 Destinos"}
           textoEstadistica={"Performance"}

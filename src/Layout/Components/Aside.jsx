@@ -32,14 +32,19 @@ export const Aside = ({ asideShow }) => {
       link: "/",
     },
     {
-      icon: <Tablas />,
-      label: "Planilla",
-      link: "/planilla",
+      icon: <Biling />,
+      label: "Proyectos",
+      link: "/proyectos",
+    },
+    {
+      icon: <IconoAlerta />,
+      label: "Empleados",
+      link: "/empleados",
     },
     {
       icon: <Biling />,
-      label: "Contratos",
-      link: "/contratos",
+      label: "Proveedores",
+      link: "/proveedores",
     },
     {
       icon: <RTL />,
@@ -47,19 +52,19 @@ export const Aside = ({ asideShow }) => {
       link: "/clientes",
     },
     {
-      icon: <IconoAlerta />,
-      label: "Empleados",
-      link: "/rutas",
-    },
-    {
       icon: <Usuario />,
       label: "Pagos",
-      link: "/profile",
+      link: "/pagos",
     },
     {
       icon: <Usuario />,
-      label: "Facturación",
+      label: "Facturas",
       link: "/facturas",
+    },
+    {
+      icon: <IconoAlerta />,
+      label: "Documentos",
+      link: "/documentos",
     },
   ];
 
@@ -68,7 +73,7 @@ export const Aside = ({ asideShow }) => {
       <aside
         className={`${backgroundAside} fixed top-0 left-0 z-[1112] w-[270px] h-[calc(100vh-2rem)] m-[1rem] rounded-[0.75rem] ${
           asideShow ? "translate-x-[0%]" : "translate-x-[-110%]"
-        } sm:translate-x-0 shadow-[rgba(0,0,0,0.05)0rem1.25rem1.6875rem0rem] transition-all duration-500`}
+        } xl:translate-x-0 shadow-[rgba(0,0,0,0.05)0rem1.25rem1.6875rem0rem] transition-all duration-500`}
       >
         <div className="ScrollTableVertical w-full h-full flex flex-col px-3 py-4 overflow-y-auto">
           <div className="cont-logo p-[24px_32px_8px]">

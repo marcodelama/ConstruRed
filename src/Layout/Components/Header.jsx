@@ -6,10 +6,7 @@ import {
   Usuario,
   IconoHamburguesa,
 } from "../../Icons/Iconos";
-import {
-  estilosHeader,
-  stylesTitulosGenerales,
-} from "../../Css/Generales";
+import { estilosHeader, stylesTitulosGenerales } from "../../Css/Generales";
 import { useConfig } from "../../Hooks/useConfig";
 
 export const Header = ({ openConfiguration, areaPagina, showAside }) => {
@@ -65,28 +62,26 @@ export const Header = ({ openConfiguration, areaPagina, showAside }) => {
               <h6 className={`${stylesTitulosGenerales}`}>{areaPagina}</h6>
             </div>
           </div>
-          <div className="flex items-center justify-between w-full xl:w-max">
-            <div className="flex">
-              <button className="text-[1.25rem] p-[5px_6px]">
-                <Usuario />
-              </button>
-              <button
-                className="text-[0.96rem] p-[5px_6px]"
-                onClick={openConfiguration}
-              >
-                <IconoConfig />
-              </button>
-              <button className="text-[1.25rem] p-[5px_6px]">
-                <IconoAlerta />
-              </button>
-              <button
-                type="button"
-                onClick={showAside}
-                className="text-[1.25rem] p-[5px_6px] block sm:hidden"
-              >
-                <IconoHamburguesa />
-              </button>
-            </div>
+          <div className="flex justify-end w-full xl:w-max">
+            <button className="text-[1.25rem] p-[5px_6px]">
+              <Usuario />
+            </button>
+            <button
+              className="text-[0.96rem] p-[5px_6px]"
+              onClick={openConfiguration}
+            >
+              <IconoConfig />
+            </button>
+            <button className="text-[1.25rem] p-[5px_6px]">
+              <IconoAlerta />
+            </button>
+            <button
+              type="button"
+              onClick={showAside}
+              className="text-[1.25rem] p-[5px_6px] block sm:hidden"
+            >
+              <IconoHamburguesa />
+            </button>
           </div>
         </div>
       </div>
