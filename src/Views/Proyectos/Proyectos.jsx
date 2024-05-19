@@ -27,7 +27,7 @@ export const Proyectos = () => {
                 </div>
               </div>
               <div className="ScrollTableVertical w-full overflow-x-auto">
-                <table className="w-[125%] text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <table className="w-[135%] text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                   <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-[rgb(41,51,79)] dark:text-white border-b dark:border-gray-700">
                     <tr>
                       {headersProyectos.map((item, index) => {
@@ -50,8 +50,8 @@ export const Proyectos = () => {
                           <td className="px-6 py-4">{item.nombre}</td>
                           <td className="px-6 py-4">{item.fechaInicio}</td>
                           <td className="px-6 py-4">{item.fechaFin}</td>
+                          <td className="px-6 py-4">{item.cliente}</td>
                           <td className="px-6 py-4">{item.descripcion}</td>
-                          <td className="px-6 py-4">{item.correo}</td>
                           {item.estado === "En Progreso" ? (
                             <td className="px-6 py-4">
                               <p className="relative bg-blue-400 dark:bg-blue-700 p-2 rounded-full text-white dark:text-gray-200 cursor-pointer">
