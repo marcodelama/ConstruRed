@@ -11,7 +11,7 @@ import {
 
 export const appConfig = [
   { path: "/", element: <Home /> },
-  { path: "proyectos", element: <Proyectos /> },
+  { path: "contratos", element: <Proyectos /> },
   { path: "empleados", element: <Empleados /> },
   { path: "clientes", element: <Clientes /> },
   { path: "proveedores", element: <Proveedores /> },

@@ -1,5 +1,7 @@
 import { dataProyectos, headersProyectos } from "../../Data/Proyectos";
 import { IconoBuscar, IconoEditar, IconoEliminar } from "../../Icons/Iconos";
+import { DataTable } from "primereact/datatable";
+import { Column } from "primereact/column";
 import { Layout } from "../../Layout/Layout";
 
 export const Proyectos = () => {
@@ -27,8 +29,8 @@ export const Proyectos = () => {
                 </div>
               </div>
               <div className="ScrollTableVertical w-full overflow-x-auto">
-                <table className="w-[135%] text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                  <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-[rgb(41,51,79)] dark:text-white border-b dark:border-gray-700">
+                <table className="w-[135%] text-sm text-left rtl:text-right">
+                  <thead className="text-xs uppercase text-[#374151] dark:text-[rgba(255,255,255,0.87)] bg-[#f9fafb] dark:bg-[rgb(41,51,79)] border-b border-[#e5e7eb] dark:border-[#424b57]">
                     <tr>
                       {headersProyectos.map((item, index) => {
                         return (
@@ -44,7 +46,7 @@ export const Proyectos = () => {
                       return (
                         <tr
                           key={item.id}
-                          className="bg-white border-b dark:bg-[rgb(32,41,64)] dark:border-gray-700 text-gray-700 dark:text-gray-400 text-center"
+                          className="border-b bg-white dark:bg-[#1f2937] dark:border-[#424b57] text-[#374151] dark:text-[rgba(255,255,255,0.87)]"
                         >
                           <td className="px-6 py-4">{item.id}</td>
                           <td className="px-6 py-4">{item.nombre}</td>
@@ -54,13 +56,13 @@ export const Proyectos = () => {
                           <td className="px-6 py-4">{item.descripcion}</td>
                           {item.estado === "En Progreso" ? (
                             <td className="px-6 py-4">
-                              <p className="relative bg-blue-400 dark:bg-blue-700 p-2 rounded-full text-white dark:text-gray-200 cursor-pointer">
+                              <p className="relative bg-blue-400 dark:bg-blue-700 p-2 rounded-full text-white dark:text-gray-200 cursor-pointer text-center">
                                 {item.estado}
                               </p>
                             </td>
                           ) : (
                             <td className="px-6 py-4">
-                              <p className="relative bg-green-400 dark:bg-green-700 p-2 rounded-full text-white dark:text-gray-200 cursor-pointer">
+                              <p className="relative bg-green-400 dark:bg-green-700 p-2 rounded-full text-white dark:text-gray-200 cursor-pointer text-center">
                                 {item.estado}
                               </p>
                             </td>

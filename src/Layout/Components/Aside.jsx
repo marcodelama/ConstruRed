@@ -33,8 +33,8 @@ export const Aside = ({ asideShow }) => {
     },
     {
       icon: <Biling />,
-      label: "Proyectos",
-      link: "/proyectos",
+      label: "Contratos",
+      link: "/contratos",
     },
     {
       icon: <IconoAlerta />,
